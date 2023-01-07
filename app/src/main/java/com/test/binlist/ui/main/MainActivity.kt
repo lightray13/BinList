@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.test.binlist.R
@@ -30,12 +31,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeViews() {
         binding.loadInfoButton.setOnClickListener {
-            val binText = binding.binEditText.text.toString()
-            if (binText.isNotEmpty()) {
-                viewModel.loadCardFromApi(binText)
-            } else {
-                showToast("Enter text!")
+            loadCard()
+        }
+        binding.binEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                return@setOnEditorActionListener loadCard()
             }
+            return@setOnEditorActionListener false
         }
         binding.binEditText.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
@@ -43,12 +45,23 @@ class MainActivity : AppCompatActivity() {
                 when (event?.action) {
                     MotionEvent.ACTION_UP -> if(event.getRawX() >= (binding.binEditText.getRight() - binding.binEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                         binding.binEditText.setText("")
-                        return true;
+                        return true
                     }
                 }
                 return false
             }
         })
+    }
+
+    private fun loadCard(): Boolean {
+        val bin = binding.binEditText.text.toString()
+        return if (bin.isNotBlank()) {
+            viewModel.loadCardFromApi(bin)
+            true
+        } else {
+            binding.binEditText.error = "Bin number is empty!"
+            false
+        }
     }
 
     private fun observeViewModel() {

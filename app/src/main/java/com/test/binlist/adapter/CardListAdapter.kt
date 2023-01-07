@@ -9,7 +9,11 @@ import com.test.binlist.R
 import com.test.binlist.data.local.database.CardListEntity
 import com.test.binlist.databinding.ItemCardListBinding
 
-class CardListAdapter : RecyclerView.Adapter<CardListAdapter.CardListViewHolder>() {
+interface OnItemClickCallback {
+    fun onCoordinatesSpaceClick(latitude: Double, longitude: Double)
+}
+
+class CardListAdapter(private val onItemClickCallback: OnItemClickCallback) : RecyclerView.Adapter<CardListAdapter.CardListViewHolder>() {
     private val cardList = mutableListOf<CardListEntity>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardListViewHolder {
@@ -19,7 +23,7 @@ class CardListAdapter : RecyclerView.Adapter<CardListAdapter.CardListViewHolder>
     }
 
     override fun onBindViewHolder(holder: CardListViewHolder, position: Int) {
-        holder.bind(cardList[position])
+        holder.bind(cardList[position], onItemClickCallback)
     }
 
     override fun getItemCount(): Int {
@@ -35,7 +39,7 @@ class CardListAdapter : RecyclerView.Adapter<CardListAdapter.CardListViewHolder>
     class CardListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val binding = ItemCardListBinding.bind(itemView)
 
-        fun bind(model: CardListEntity) {
+        fun bind(model: CardListEntity, onItemClickCallback: OnItemClickCallback) {
 
             binding.schemeTextView.text = model.scheme
             binding.brandTextView.text = model.brand
@@ -68,6 +72,10 @@ class CardListAdapter : RecyclerView.Adapter<CardListAdapter.CardListViewHolder>
             binding.countryLatitudeTextView.text = model.latitude?.toInt().toString()
             binding.countryLongitudeTextView.text = model.longitude?.toInt().toString()
             binding.bankPhoneTextView.text = model.phone
+
+            binding.coordinatesClickSpaceView.setOnClickListener {
+                onItemClickCallback.onCoordinatesSpaceClick(model.latitude ?: 55.45, model.longitude ?: 37.36)
+            }
         }
     }
 }

@@ -15,98 +15,80 @@
         android:padding="16dp">
 
     <TextView
+        style="@style/TextStyle.TextHeaderStyle"
         android:id="@+id/schemeTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif-monospace"
-        android:textSize="18sp"
-        android:textColor="@android:color/darker_gray"
         android:text="@string/scheme_network"
-        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
+        style="@style/NormalTextStyle"
         android:id="@+id/schemeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:layout_marginTop="8dp"
         android:text="@string/empty_value"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/schemeTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/schemeTitleTextView"/>
 
     <TextView
+        style="@style/TextStyle.TextHeaderStyle"
         android:id="@+id/brandTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textSize="18sp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
         android:text="@string/brand"
-        android:textAllCaps="true"
         app:layout_constraintTop_toBottomOf="@+id/schemeTextView"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        style="@style/NormalTextStyle"
         android:id="@+id/brandTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:text="@string/empty_value"
         android:layout_marginTop="8dp"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/brandTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/brandTitleTextView"/>
 
     <TextView
+        style="@style/TextStyle.TextHeaderStyle"
         android:id="@+id/cardNumberTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
         android:text="@string/card_number"
-        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/brandTextView"/>
 
     <TextView
+        style="@style/TextStyle.TextSubHeaderStyle"
         android:id="@+id/cardNumberLengthTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
         android:text="@string/length"
-        android:textSize="16sp"
-        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@+id/cardNumberTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/cardNumberTitleTextView"/>
 
     <TextView
+        style="@style/NormalTextStyle"
         android:id="@+id/cardNumberLengthTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
         android:text="@string/empty_value"
         app:layout_constraintStart_toStartOf="@+id/cardNumberLengthTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/cardNumberLengthTitleTextView"/>
 
     <TextView
+        style="@style/TextStyle.TextSubHeaderStyle"
         android:id="@+id/cardNumberLuhnTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="33dp"
-        android:textColor="@android:color/darker_gray"
-        android:fontFamily="serif-monospace"
-        android:textSize="16sp"
         android:text="@string/luhn"
-        android:textAllCaps="true"
         app:layout_constraintStart_toEndOf="@+id/cardNumberLengthTitleTextView"
         app:layout_constraintTop_toTopOf="@+id/cardNumberLengthTitleTextView"/>
 
@@ -143,25 +125,21 @@
         app:layout_constraintTop_toBottomOf="@+id/cardNumberLuhnTitleTextView"/>
 
     <TextView
+        style="@style/TextStyle.TextHeaderStyle"
         android:id="@+id/bankTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
         android:text="@string/bank"
-        android:textSize="18sp"
-        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardNumberLengthTextView"/>
 
     <TextView
+        style="@style/NormalTextStyle"
         android:id="@+id/bankTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:layout_marginTop="8dp"
-        android:textSize="18sp"
         android:text="@string/empty_value"
         app:layout_constraintStart_toStartOf="@+id/bankTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/bankTitleTextView"/>
@@ -200,26 +178,23 @@
         bankTextView,bankWebsiteTextView,bankPhoneTextView"/>
 
     <TextView
+        style="@style/TextStyle.TextHeaderStyle"
         android:id="@+id/typeTitleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="@dimen/space_between_columns"
         android:text="@string/type"
-        android:textSize="18sp"
-        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@id/barrier"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
+        style="@style/NormalTextStyle"
         android:id="@+id/typeDebitTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:layout_marginTop="8dp"
         android:text="@string/debit"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/typeTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/typeTitleTextView"/>
 
@@ -235,38 +210,35 @@
         app:layout_constraintTop_toTopOf="@+id/typeDebitTextView"/>
 
     <TextView
+        style="@style/NormalTextStyle.Disabled"
         android:id="@+id/typeCreditTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/darker_gray"
         android:layout_marginStart="4dp"
         android:text="@string/credit"
-        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/typeSplashTextView"
-        app:layout_constraintTop_toTopOf="@+id/typeDebitTextView"/>
+        app:layout_constraintTop_toTopOf="@+id/typeDebitTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
+        style="@style/TextStyle.TextHeaderStyle"
         android:id="@+id/prepaidTitleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="50dp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="@dimen/space_between_columns"
         android:text="@string/prepaid"
-        android:textSize="18sp"
-        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@id/barrier"
-        app:layout_constraintTop_toBottomOf="@+id/typeDebitTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/typeCreditTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
+        style="@style/NormalTextStyle.Disabled"
         android:id="@+id/prepaidYesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/darker_gray"
         android:layout_marginTop="8dp"
         android:text="@string/yes"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/prepaidTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/prepaidTitleTextView"/>
 
@@ -282,41 +254,39 @@
         app:layout_constraintTop_toTopOf="@+id/prepaidYesTextView"/>
 
     <TextView
+        style="@style/NormalTextStyle"
         android:id="@+id/prepaidNoTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
         android:layout_marginStart="4dp"
         android:text="@string/no"
-        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/prepaidSplashTextView"
-        app:layout_constraintTop_toTopOf="@+id/prepaidYesTextView"/>
+        app:layout_constraintTop_toTopOf="@+id/prepaidYesTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
+        style="@style/TextStyle.TextHeaderStyle"
         android:id="@+id/countryTitleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="50dp"
-        android:fontFamily="serif-monospace"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
+        android:layout_marginStart="@dimen/space_between_columns"
         android:text="@string/country"
-        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="@id/barrier"
-        app:layout_constraintTop_toBottomOf="@+id/prepaidYesTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/prepaidNoTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
+        style="@style/NormalTextStyle"
         android:id="@+id/countryTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="@dimen/space_between_columns"
         android:text="@string/empty_value"
-        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@id/barrier"
-        app:layout_constraintTop_toBottomOf="@+id/countryTitleTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/countryTitleTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/countryLatitudeTitleTextView"
@@ -327,12 +297,14 @@
         android:fontFamily="serif-monospace"
         android:textSize="14sp"
         android:text="@string/latitude"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/countryTextView"
+        app:layout_constraintEnd_toStartOf="@+id/countryLatitudeTextView"
         app:layout_constraintTop_toBottomOf="@+id/countryTextView"/>
 
     <TextView
         android:id="@+id/countryLatitudeTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/black"
@@ -340,11 +312,12 @@
         android:textSize="14sp"
         android:text="@string/empty_value"
         app:layout_constraintStart_toEndOf="@+id/countryLatitudeTitleTextView"
-        app:layout_constraintTop_toBottomOf="@+id/countryTextView"/>
+        app:layout_constraintEnd_toStartOf="@+id/countryCommaTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/countryTextView" />
 
     <TextView
         android:id="@+id/countryCommaTitleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/darker_gray"
@@ -352,20 +325,23 @@
         android:textSize="14sp"
         android:text="@string/comma"
         app:layout_constraintStart_toEndOf="@+id/countryLatitudeTextView"
-        app:layout_constraintTop_toBottomOf="@+id/countryTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/countryTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/countryLongitudeTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="30dp"
         android:textColor="@android:color/darker_gray"
         android:fontFamily="serif-monospace"
         android:textSize="14sp"
         android:text="@string/longitude"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@id/barrier"
-        app:layout_constraintTop_toBottomOf="@+id/countryLatitudeTitleTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/countryLatitudeTitleTextView"
+        app:layout_constraintEnd_toStartOf="@+id/countryLongitudeTextView"/>
 
     <TextView
         android:id="@+id/countryLongitudeTextView"
@@ -377,11 +353,12 @@
         android:textSize="14sp"
         android:text="@string/empty_value"
         app:layout_constraintStart_toEndOf="@+id/countryLongitudeTitleTextView"
-        app:layout_constraintTop_toBottomOf="@+id/countryLatitudeTitleTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/countryLatitudeTitleTextView"
+        app:layout_constraintEnd_toStartOf="@+id/countryParenthesisTitleTextView"/>
 
     <TextView
         android:id="@+id/countryParenthesisTitleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/darker_gray"
@@ -389,7 +366,17 @@
         android:textSize="14sp"
         android:text="@string/parenthesis"
         app:layout_constraintStart_toEndOf="@+id/countryLongitudeTextView"
-        app:layout_constraintTop_toBottomOf="@+id/countryLatitudeTitleTextView"/>
+        app:layout_constraintTop_toBottomOf="@+id/countryLatitudeTitleTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/coordinatesClickSpaceView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/countryLatitudeTitleTextView"
+            app:layout_constraintTop_toTopOf="@+id/countryLatitudeTitleTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/countryLongitudeTitleTextView"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -20,6 +20,6 @@
     <string name="comma">,</string>
     <string name="longitude">longitude:</string>
     <string name="parenthesis">)</string>
-    <string name="enter_the_first_digits_of_a_card_number">Enter the first digits of a card number (BIN/IIN)</string>
+    <string name="enter_the_first_digits_of_a_card_number">Enter the first digits\nof a card number (BIN/IIN)</string>
     <string name="load">Load</string>
 </resources>
